@@ -83,6 +83,9 @@
     yesBtn.addEventListener("click", () => {
       message.innerText = "Beni sevdiğini biliyordum! ❤️😊";
       video.style.display = "block";
+      video.muted = false;
+      video.play();
+
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
     });
