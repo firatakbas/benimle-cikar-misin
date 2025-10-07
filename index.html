@@ -41,12 +41,13 @@
   <button id="noBtn">Hayır</button>
 
   <div id="message"></div>
-  <video src="./happy-happy-happy-cay.mp4"></video>
+  <video src="./happy-happy-happy-cay.mp4" width="300" height="300" id="video"></video>
 
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
     const message = document.getElementById("message");
+    const video = document.getElementById("video");
 
     const questions = [
       "Emin misin? 🙁",
@@ -68,8 +69,11 @@
       }
     });
 
+    video.style.display = "none";
+
     yesBtn.addEventListener("click", () => {
       message.innerText = "Beni sevdiğini biliyordum! ❤️😊";
+      video.style.display = "block";
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
     });
