@@ -85,7 +85,7 @@
   <div class="container">
     <h1>Küçük Hanım <br>Benimle çıkar mısın? 🥺</h1>
 
-    <img src="./kedi.jpeg" alt="Sevimli kedi fotoğrafı">
+    <img src="./kedi.jpeg" alt="Sevimli kedi fotoğrafı" id="image">
 
     <button id="yesBtn">Evet</button>
     <button id="noBtn">Hayır</button>
@@ -107,6 +107,7 @@
     const yesBtn = document.getElementById("yesBtn");
     const message = document.getElementById("message");
     const video = document.getElementById("video");
+    const image = document.getElementById("image");
 
     const questions = [
       "Emin misin? 🙁",
@@ -136,6 +137,7 @@
 
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
+      image.style.display = "none";
     });
   </script>
 
