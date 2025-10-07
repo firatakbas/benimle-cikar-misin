@@ -15,16 +15,30 @@
       margin: 0;
       padding: 20px;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      max-width: 400px;
+      width: 100%;
       text-align: center;
     }
 
     h1 {
       font-size: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 90%;
+      max-width: 350px;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
 
     button {
@@ -57,34 +71,36 @@
     }
 
     video {
-      display: none;
-      margin-top: 30px;
+      margin-top: 20px;
       width: 90%;
       max-width: 350px;
       height: auto;
       border-radius: 10px;
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>Küçük Hanım <br>Benimle çıkar mısın? 🥺</h1>
+  <div class="container">
+    <h1>Küçük Hanım <br>Benimle çıkar mısın? 🥺</h1>
 
-  <img src="./kedi.jpeg" alt="">
+    <img src="./kedi.jpeg" alt="Sevimli kedi fotoğrafı">
 
-  <button id="yesBtn">Evet</button>
-  <button id="noBtn">Hayır</button>
+    <button id="yesBtn">Evet</button>
+    <button id="noBtn">Hayır</button>
 
-  <div id="message"></div>
+    <div id="message"></div>
 
-  <video
-    src="./happy-happy-happy-cay.mp4"
-    id="video"
-    autoplay
-    muted
-    playsinline
-    loop>
-  </video>
+    <video
+      src="./happy-happy-happy-cay.mp4"
+      id="video"
+      autoplay
+      muted
+      playsinline
+      loop>
+    </video>
+  </div>
 
   <script>
     const noBtn = document.getElementById("noBtn");
@@ -112,13 +128,9 @@
       }
     });
 
-    video.style.display = "none";
-
     yesBtn.addEventListener("click", () => {
       message.innerText = "Beni sevdiğini biliyordum! ❤️😊";
       video.style.display = "block";
-
-      // Sesli başlatmak için kullanıcı etkileşimini kullanıyoruz
       video.muted = false;
       video.play();
 
